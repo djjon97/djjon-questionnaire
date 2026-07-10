@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import WeddingForm from "./WeddingForm";
 import EventsForm from "./EventsForm";
+import Contract from "./Contract";
+import ContractNew from "./ContractNew";
 
 const CRIMSON = "#9B1B1B";
 
@@ -11,6 +13,8 @@ export default function App() {
     const path = window.location.pathname;
     if (path === "/wedding") setPage("wedding");
     else if (path === "/events") setPage("events");
+    else if (path === "/contract") setPage("contract");
+    else if (path === "/contract-new") setPage("contract-new");
     else setPage("home");
   }, []);
 
@@ -21,6 +25,8 @@ export default function App() {
 
   if (page === "wedding") return <WeddingForm />;
   if (page === "events") return <EventsForm />;
+  if (page === "contract") return <Contract />;
+  if (page === "contract-new") return <ContractNew />;
 
   // Home / landing page
   return (
